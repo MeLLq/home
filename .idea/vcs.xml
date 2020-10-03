@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$/.." vcs="Git" />
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/3practica3" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/practika5" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/practika6" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/praktika1" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/praktika2" vcs="Git" />
+    <mapping directory="$USER_HOME$/Downloads" vcs="Git" />
   </component>
 </project>
