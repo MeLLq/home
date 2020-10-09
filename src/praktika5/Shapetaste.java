@@ -1,3 +1,4 @@
+package praktika5;
 import java.util.Scanner;
 abstract class Shape {
     public abstract double Area();

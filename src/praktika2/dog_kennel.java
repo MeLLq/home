@@ -1,4 +1,4 @@
-
+package praktika2;
 public class dog_kennel {
     public static void massive(){
         Dog[] sol=new Dog[4];
