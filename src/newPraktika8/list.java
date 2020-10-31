@@ -13,7 +13,6 @@ public class list {
         ArrayList<String> listOfCases = new ArrayList<String>();
         listOfCases.add("Почистить зубы");
         listOfCases.add("Умыться");
-        listOfCases.add("Покушать");
 
         System.out.println("Для выхода из программы введите - EXIT");
 

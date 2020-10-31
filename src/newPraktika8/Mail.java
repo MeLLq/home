@@ -32,7 +32,7 @@ public class Mail  {
             System.out.println("Добавлено");
         }
         else
-            System.err.println("Неверный адрес");
+            System.err.println("Неизвестный адрес");
     }
     void read(){
         String str;
@@ -53,7 +53,7 @@ public class Mail  {
                     }
                     break;
                 default:
-                    System.err.println("Неверная команда");
+                    System.err.println("Неизвестная команда");
                     break;
             }
         }

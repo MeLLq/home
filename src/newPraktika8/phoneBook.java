@@ -53,8 +53,8 @@ public class phoneBook {
                 }
                 if (counter == 0) {
                     System.out.println("Впишите имя: ");
-                    Scanner scanner2 = new Scanner(System.in);
-                    String name = scanner2.nextLine();
+                    Scanner sc = new Scanner(System.in);
+                    String name = sc.nextLine();
                     map.put(name, input);
                 }
             }
