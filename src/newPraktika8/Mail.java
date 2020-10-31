@@ -1,64 +1,56 @@
 package newPraktika8;
 import java.util.Scanner;
 import java.util.TreeSet;
-public class Mail  {
-    private TreeSet<String> mailList = new TreeSet<>();
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
-    void checkMail(String str){
-        boolean dot = false;
-        boolean at = false;
-        boolean id = true;
+public class Mail
+{
+    public static void main(String[] args) {
 
-        for (int i = 0; i < str.length(); i++) {
-            if(str.charAt(i) == '@'){
-                at = true;
-            }
-            else if(at && str.charAt(i) == '@' || str.charAt(i) == '@' && str.charAt(i+1) == '.' || str.charAt(i) == '.' && str.charAt(i+1) == '@') {
-                id = false;
-            }
-            else if(!dot && at && str.charAt(i) == '.' ){
-                dot = true;
-            }
-            else if (at  && dot && str.charAt(i) == '.') {
-                id = false;
-            }
-        }
-        if(!dot || !at)
-            id = false;
-
-        if(id) {
-            mailList.add(str);
-            System.out.println("Добавлено");
-        }
-        else
-            System.err.println("Неизвестный адрес");
-    }
-    void read(){
+        TreeSet<String> emails = new TreeSet<String>();
+        Scanner read = new Scanner(System.in);
+        String[] lineArr;
         String str;
-        Scanner in = new Scanner(System.in);
-        str = in.nextLine();
-        String[] temp = str.split(" ");
+        String line;
+        boolean error = false;
+        Pattern pattern;
+        pattern = Pattern.compile("^([A-Za-z0-9]{1,}[\\\\.-]{0,1}[A-Za-z0-9]{1,})+@([A-Za-z0-9]{1,}[\\\\.-]{0,1}[A-Za-z0-9]{1,})+[\\\\.]{1}[a-z]{2,4}$");
+        Matcher matcher;
 
-        for(int i=0; i<temp.length; i++){
-            switch (temp[i]){
-                case "ADD":
-                    i++;
-                    checkMail(temp[i]);
+        emails.add("jhgj@gmail.com");
+        emails.add("gfjh@yandex.ru");
+
+        System.out.println("Для выхода из программы введите - EXIT");
+
+        line = read.nextLine();
+
+        while (!line.equals("EXIT")) {
+            lineArr = line.split(" ");
+
+            switch (lineArr[0]) {
+                case ("LIST"):
+                    if (lineArr.length == 1)
+                        System.out.println(emails);
+                    else
+                        System.out.println("Неизвестная команда.");
                     break;
-                case "LIST":
-                    System.out.println();
-                    for(String mail: mailList){
-                        System.out.println(mail);
+                case ("ADD"):
+                    matcher = pattern.matcher(lineArr[1]);
+                    boolean found = matcher.matches();
+                    if (found)
+                    {
+                        emails.add(lineArr[1]);
+                        System.out.println("Добавлено");
                     }
+                    else
+                        System.out.println("Неверный ввод.");
                     break;
                 default:
-                    System.err.println("Неизвестная команда");
+                    System.out.println("Неизвестная команда.");
                     break;
             }
+            line = read.nextLine();
         }
-    }
-
-    public static void main(String[] args) {
-        new Mail().read();
     }
 }
