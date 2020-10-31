@@ -10,7 +10,6 @@ public class Mail  {
         boolean id = true;
 
         for (int i = 0; i < str.length(); i++) {
-            //System.out.println(str.charAt(i));
             if(str.charAt(i) == '@'){
                 at = true;
             }
