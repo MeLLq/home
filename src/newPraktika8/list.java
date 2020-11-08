@@ -32,17 +32,15 @@ public class list {
                     }
                 }
             } else if (input.equals("EDIT")) {
-                editInput = scanner.nextInt();
-                try {
+                try {editInput = scanner.nextInt();
                     toDoList.remove(editInput);
+                    editCase = scanner.nextLine();
+                    toDoList.add(editInput, editCase);
                 } catch (Exception i) {
                     System.out.println("Не верный ввод");
                 }
-                editCase = scanner.nextLine();
-                toDoList.add(editInput, editCase);
             } else if (input.equals("DELETE")) {
-                deleteInput = scanner.nextInt();
-                try {
+                try {deleteInput = scanner.nextInt();
                     toDoList.remove(deleteInput);
                 } catch (Exception e) {
                     System.out.println("Не верный ввод");
